@@ -1,25 +1,25 @@
-function draw() {
-  const canvas = document.getElementById("myCanvas");
-  if (!canvas.getContext) {
-    return;
-  }
-  const ctx = canvas.getContext("2d");
+const game = new Phaser.Game(800, 600, Phaser.CANVAS, null, {
+  preload,
+  create,
+  update,
+});
 
-  ctx.strokeStyle = "black";
-  ctx.lineWidth = 2;
+let graphics;
+let table;
 
-  // Draw table - External rounded rectangle
-  ctx.beginPath();
-  ctx.roundRect(10, 10, 1000, 650, 20);
-  ctx.stroke();
-  ctx.closePath();
-
-  // Draw table - Middle line
-  ctx.beginPath();
-  ctx.moveTo(500, 10);
-  ctx.lineTo(500, 660);
-  ctx.stroke();
-  ctx.closePath();
+function preload() {
+  game.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;
+  game.scale.pageAlignHorizontally = true;
+  game.scale.pageAlignVertically = true;
+  game.stage.backgroundColor = "#000";
 }
 
-window.addEventListener("load", draw);
+function create() {
+  graphics = game.add.graphics(0, 0);
+  graphics.lineStyle(2, 0xffffff);
+  graphics.drawRoundedRect(10, 10, 780, 580, 20);
+  graphics.moveTo(400, 10);
+  graphics.lineTo(400, 590);
+}
+
+function update() {}
