@@ -11,4 +11,4 @@ While investigating, I found MDN web docs Game Development tutorials here: [http
 
 I'm adding the final code here for reference. Then, I'll try to create a version of Pong based on said tutorials.
 
-- [Pong!](pong.html)
+- [Pong! with Phaser](pong.html)
